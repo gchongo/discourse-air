@@ -613,3 +613,55 @@ html body #main-outlet {
 .title-voting {
   padding-left: 14px;
 }
+
+@import url("https://use.fontawesome.com/releases/v6.5.1/css/all.css");
+
+.discourse-tag.bullet::before,
+.discourse-tag.box::before {
+  content: "\f02b";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-style: normal;
+  top: 0.05em;
+  font-size: 1.05em;
+  margin-right: 4px;
+  color: #ccc;
+  vertical-align: middle;
+}
+
+.discourse-tag.box::before {
+  color: #aaa;
+  font-size: 0.95em;
+  font-weight: 900;
+}
+
+// 去除文章标签背景色
+.extra-info-wrapper .discourse-tag.box,
+.discourse-tag.box {
+  background: none;
+}
+
+// 显示 posts 拥有者
+div.topic-owner .topic-body .contents > .cooked::after {
+  content: "TOPIC OWNER";
+  font-size: small;
+  color: #00aeff;
+  float: right;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.extra-info-wrapper span {
+  color: var(--header_primary);
+}
+
+// 内部输入框、按钮也透明（可选）
+.search-menu .search-input,
+.search-menu .btn {
+  background: transparent !important;
+}
+
+.welcome-banner {
+  padding-block-start: 0;
+  padding-block-end: 0;
+}
