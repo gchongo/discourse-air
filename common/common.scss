@@ -614,39 +614,41 @@ html body #main-outlet {
   padding-left: 14px;
 }
 
-@import url("https://use.fontawesome.com/releases/v6.5.1/css/all.css");
-
+// Tag icons (Font Awesome loaded via common/head_tag.html)
 .discourse-tag.bullet::before,
 .discourse-tag.box::before {
   content: "\f02b";
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
   font-style: normal;
-  top: 0.05em;
+  display: inline-block;
   font-size: 1.05em;
   margin-right: 4px;
   color: #ccc;
   vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
 }
 
 .discourse-tag.box::before {
   color: #aaa;
   font-size: 0.95em;
-  font-weight: 900;
 }
 
-// 去除文章标签背景色
+// Remove tag background
 .extra-info-wrapper .discourse-tag.box,
 .discourse-tag.box {
-  background: none;
+  background: none !important;
+  background-color: transparent !important;
 }
 
-// 显示 posts 拥有者
-div.topic-owner .topic-body .contents > .cooked::after {
+// Show topic owner label on OP posts
+.topic-owner .topic-body .cooked::after,
+.post--topic-owner .topic-body .cooked::after {
   content: "TOPIC OWNER";
   font-size: small;
   color: #00aeff;
   float: right;
+  clear: both;
   font-style: italic;
   font-weight: bold;
 }
@@ -655,13 +657,16 @@ div.topic-owner .topic-body .contents > .cooked::after {
   color: var(--header_primary);
 }
 
-// 内部输入框、按钮也透明（可选）
+// Transparent search inputs / buttons
 .search-menu .search-input,
-.search-menu .btn {
+.search-menu .btn,
+.welcome-banner__search-menu .search-input,
+.welcome-banner__search-menu .btn {
   background: transparent !important;
 }
 
+// Welcome banner padding is applied via CSS variables on __wrap
 .welcome-banner {
-  padding-block-start: 0;
-  padding-block-end: 0;
+  --d-welcome-banner-padding-top: 0;
+  --d-welcome-banner-padding-bottom: 0;
 }
