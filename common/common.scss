@@ -357,7 +357,7 @@ html body #main-outlet {
     display: contents;
 
     .topic-list-data.default {
-      width: 63%;
+      width: 78%;
     }
 
     .topic-list-data.posters {
@@ -365,11 +365,11 @@ html body #main-outlet {
     }
 
     .topic-list-data.posts {
-      width: 15%;
+      width: 7%;
     }
 
     .topic-list-data.activity {
-      width: 15%;
+      width: 8%;
     }
   }
 
@@ -425,7 +425,7 @@ html body #main-outlet {
       }
 
       .topic-list-data.main-link {
-        width: 63%;
+        width: 78%;
         order: 2;
       }
 
@@ -443,7 +443,7 @@ html body #main-outlet {
       }
 
       .topic-list-data.posts {
-        width: 15%;
+        width: 7%;
         order: 3;
         display: flex;
         justify-content: center;
@@ -451,7 +451,7 @@ html body #main-outlet {
       }
 
       .topic-list-data.age {
-        width: 15%;
+        width: 8%;
         order: 4;
         display: flex;
         justify-content: center;
