@@ -614,41 +614,40 @@ html body #main-outlet {
   padding-left: 14px;
 }
 
-// Tag icons (Font Awesome loaded via common/head_tag.html)
+@import url("https://use.fontawesome.com/releases/v6.5.1/css/all.css");
+
 .discourse-tag.bullet::before,
 .discourse-tag.box::before {
   content: "\f02b";
   font-family: "Font Awesome 6 Free";
-  font-weight: 900;
+  font-weight: 900; /* 400 = Regular（空心） */
   font-style: normal;
-  display: inline-block;
+  top: 0.05em;
   font-size: 1.05em;
   margin-right: 4px;
   color: #ccc;
   vertical-align: middle;
-  -webkit-font-smoothing: antialiased;
 }
 
+/* 如果你想让 .box 类有不同样式，可以保留或调整 */
 .discourse-tag.box::before {
-  color: #aaa;
+  color: #aaa; /* 调成你喜欢的浅色 */
   font-size: 0.95em;
+  font-weight: 900; /* 保持空心 */
 }
 
-// Remove tag background
+/*去除文章标签背景色*/
 .extra-info-wrapper .discourse-tag.box,
 .discourse-tag.box {
-  background: none !important;
-  background-color: transparent !important;
+  background: none;
 }
 
-// Show topic owner label on OP posts
-.topic-owner .topic-body .cooked::after,
-.post--topic-owner .topic-body .cooked::after {
+/* 显示posts拥有者 */
+div.topic-owner .topic-body .contents > .cooked::after {
   content: "TOPIC OWNER";
   font-size: small;
   color: #00aeff;
   float: right;
-  clear: both;
   font-style: italic;
   font-weight: bold;
 }
@@ -657,16 +656,15 @@ html body #main-outlet {
   color: var(--header_primary);
 }
 
-// Transparent search inputs / buttons
+/* 内部输入框、按钮也透明（可选） */
 .search-menu .search-input,
-.search-menu .btn,
-.welcome-banner__search-menu .search-input,
-.welcome-banner__search-menu .btn {
-  background: transparent !important;
+.search-menu .btn {
+  background: transparent !important; /* 背景完全透明 */
+  /*  border: none !important; /* 如有阴影也去掉 */
+  /*  box-shadow: none !important; */ /* 如有边框也去掉 */
 }
 
-// Welcome banner padding is applied via CSS variables on __wrap
 .welcome-banner {
-  --d-welcome-banner-padding-top: 0;
-  --d-welcome-banner-padding-bottom: 0;
+  padding-block-start: 0;
+  padding-block-end: 0;
 }
