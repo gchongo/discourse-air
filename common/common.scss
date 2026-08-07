@@ -636,6 +636,16 @@ html body #main-outlet {
   font-weight: 900; /* 保持空心 */
 }
 
+/* 搜索结果中隐藏自定义标签图标，避免与默认标记重复 */
+.search-result-tag .discourse-tag.box::before,
+.search-result-tag .discourse-tag.bullet::before {
+  content: none !important;
+  display: none !important;
+  margin: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
 /*去除文章标签背景色*/
 .extra-info-wrapper .discourse-tag.box,
 .discourse-tag.box {
